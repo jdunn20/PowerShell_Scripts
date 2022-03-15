@@ -58,3 +58,5 @@ $publicIp | Select-Object Name,IpAddress,@{label='FQDN';expression={$_.DnsSettin
 #Connect to VM
 
 mstsc.exe /v 13.68.176.68
+
+#Moving Script
