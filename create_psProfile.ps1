@@ -1,4 +1,4 @@
-#Creating a profile for the current user and the current host
+#Creating a PowerShell profile for the current user and the current host
 
 New-Item `
     -ItemType "File" `
