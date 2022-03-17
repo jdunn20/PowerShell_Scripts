@@ -1,0 +1,1 @@
+Get-DnsClientCache | Where{ $_.TimeToLive -gt 100 } Out-File <path>
