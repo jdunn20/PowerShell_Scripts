@@ -1,0 +1,25 @@
+# Displays certificate that will digitally sign PowerShell script
+
+Get-ChildItem Cert:\CurrentUser\My\ -CodeSigningCert
+
+# Stores the certificate in $cert variable
+
+$cert = Get-ChildItem Cert:\CurrentUser\My\ -CodeSigningCert
+
+# Set the location to the folder containing script to be signed
+
+Set-Location E:\Mod07\Labfiles 
+
+Rename-Item HelloWorld.txt Helloworld.ps1
+
+# Digitally sign the "HelloWorld.ps1" script
+
+Set-AuthenticodeSignature -FilePath HelloWorld.ps1 -Certificate $cert
+
+# Set the execution policy to AllSigned
+
+Set-ExecutionPolicy Allsigned
+
+# Run the script that is now signed 
+
+.\Helloworld.ps1
